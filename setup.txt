@@ -25,7 +25,8 @@ sudo apt install install libmicrohttpd-dev libjansson-dev \
 	meson --prefix=/usr build && ninja -C build && sudo ninja -C build install 
 
 
-3. Second error: configure: error: libsrtp and libsrtp2 not found. See README.md for installation instructions
+3. Second error: 
+   "configure: error: libsrtp and libsrtp2 not found. See README.md for installation instructions"
  	where libsrtp-2.2.0 is missing and setup fails so must be manually added
 	a. run the following command in a separate folder not in raztot like libnice
 		wget https://github.com/cisco/libsrtp/archive/v2.2.0.tar.gz
@@ -34,6 +35,12 @@ sudo apt install install libmicrohttpd-dev libjansson-dev \
 		./configure --prefix=/usr --enable-openssl
 		make shared_library && sudo make install
 
+
+Note: If at any point you need to redo the installation and you get the error message: 
+"fatal destination path janus already directory"
+-> Delete raztot/config and delete the janus folder
+
+Note2: Compiled libnice and libsrtp2 are in raztot/install_additional
 
    
     
